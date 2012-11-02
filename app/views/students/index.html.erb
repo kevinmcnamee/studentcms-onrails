@@ -1,0 +1,63 @@
+<div id="page">
+  <header id="header">
+    <div class="center">
+      <nav id="main-menu">
+        <ul>
+          <li class="site-title"><a href="index.html">Students @ Flatiron School</a></li>
+        </ul>
+        <ul>
+          <li><a href="http://flatironschool.com">More about Our School</a></li>
+        </ul>
+      </nav>
+      <div class="clear"></div>
+    </div>
+  </header>
+
+  <section id="about" class="about-us content">
+    <div class="center">
+      <h1 id="intro" style="padding-top: 20px">
+        Every story has heroes. We're 20 people on a journey to learn to love code.
+      </h1>
+      <!-- <h2 class="title"><span>The Heroes</span></h2> -->
+      <div class="columns">
+        <% @students.each do |student| %>
+           <% if (student.id) % 3 == 0 %>
+             <div class="one_third last">
+          <% else %>
+             <div class="one_third">
+          <% end %>
+              <div class="name-position">
+                <h2><%= link_to student.name, student %></h2>
+                <div class="position"><%= student.catchphrase %></div>
+              </div>
+              <div class="clear"></div>
+            </a>
+            <p class="excerpt"><%= student.introduction %></p>
+          </div>
+
+          <% if (student.id) % 3 == 0 %>
+          <div class="clear"></div> 
+          <% end %>
+        <% end %>
+        
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!-- /END .center-->
+  </section>
+  <!-- /END #about-us -->
+
+
+   <section id="copyright" class="footer content">
+    <div class="center">
+      <p>&copy; 2012. All Your Rights Are Belong To Us.</p>
+      <div class="clear"></div>
+    </div>
+  </section>
+</div>
+<!--/border-->
+<div id="left-border"></div>
+<div id="right-border"></div>
+<div id="top-border"></div>
+<div id="bottom-border"></div>
